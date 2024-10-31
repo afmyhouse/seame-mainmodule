@@ -1,0 +1,34 @@
+name: C Program Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner provided by GitHub
+
+    steps:
+      # Step 1: Check out the code and initialize submodules
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive  # Initializes and updates submodules recursively
+
+      # Step 2: Set up the C compiler (GCC)
+      - name: Set up GCC
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      # Step 3: Build the project using Makefile
+      - name: Build project
+        run: |
+          cd src
+          make  # Runs the make command to build the project
+
+      # Step 4: Run the built program (optional)
+      - name: Run the program
+        run: |
+          cd src
+          ./main
