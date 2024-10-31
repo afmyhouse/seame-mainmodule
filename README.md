@@ -10,8 +10,10 @@ git clone https://github.com/PedroBatista1/mainmodule.git
 **2 - Initialize submodules**
 
 (fetches source code from the submodule repository in https://github.com/PedroBatista1/submodule)
-git submodule init
-git submodule update
+
+a. git submodule init
+
+b. git submodule update
 
 **3 - Create a feature branch, apply a change and create a PR to trigger the build through the github action in .github/workflow.**
 
