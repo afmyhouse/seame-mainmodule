@@ -1,7 +1,7 @@
 # Variables
 CC = gcc
 CFLAGS = -I./submodule -Wall
-OBJ = main.o submodule/submodule.o
+OBJ = main.o submodule/src/submodule.o
 TARGET = main
 
 # Default target
@@ -16,8 +16,8 @@ main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
 
 # Compile submodule.c to submodule.o
-submodule/submodule.o: submodule/submodule.c
-	$(CC) $(CFLAGS) -c submodule/submodule.c -o submodule/submodule.o
+submodule/submodule.o: submodule/src/submodule.c
+	$(CC) $(CFLAGS) -c submodule/src/submodule.c -o submodule/src/submodule.o
 
 # Clean up build files
 clean:
