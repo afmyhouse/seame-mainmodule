@@ -1,3 +1,6 @@
 [submodule "src/submodule"]
 	path = src/submodule
 	url = https://github.com/PedroBatista1/submodule.git
+[submodule "seame-submodule"]
+	path = seame-submodule
+	url = https://github.com/afmyhouse/seame-submodule
